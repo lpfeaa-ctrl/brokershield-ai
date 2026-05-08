@@ -225,7 +225,7 @@ export default function AnalyzePage() {
                     className="text-[11.5px] font-medium px-3 py-1.5 rounded-lg transition-all"
                     style={{
                       background: active ? "rgba(59,130,246,0.12)" : "rgba(4,10,25,0.6)",
-                      color: active ? "#60a5fa" : "#475569",
+                      color: active ? "#5ba8d4" : "#475569",
                       border: `1px solid ${active ? "rgba(59,130,246,0.28)" : "rgba(148,163,184,0.08)"}`,
                     }}
                   >
@@ -309,7 +309,7 @@ export default function AnalyzePage() {
             whileTap={!analyzing ? { scale: 0.985 } : {}}
             className="w-full py-3.5 rounded-xl font-bold text-white text-[14px] flex items-center justify-center gap-2.5 transition-all disabled:opacity-40"
             style={{
-              background: "linear-gradient(135deg,#2563eb,#4f46e5)",
+              background: "linear-gradient(135deg,#1D4E6B,#1A6FA5)",
               boxShadow: analyzing ? "none" : "0 0 28px rgba(37,99,235,0.4), 0 4px 16px rgba(0,0,0,0.3)",
             }}
           >
@@ -355,7 +355,7 @@ export default function AnalyzePage() {
                   animate={{ boxShadow: ["0 0 12px rgba(37,99,235,0.3)","0 0 32px rgba(37,99,235,0.65)","0 0 12px rgba(37,99,235,0.3)"] }}
                   transition={{ duration: 1.6, repeat: Infinity }}
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
-                  style={{ background: "linear-gradient(135deg,#2563eb,#4f46e5)" }}
+                  style={{ background: "linear-gradient(135deg,#1D4E6B,#1A6FA5)" }}
                 >
                   <Zap size={24} className="text-white" />
                 </motion.div>

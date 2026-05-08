@@ -37,7 +37,7 @@ export default function DueDiligencePage() {
   const status = critPct === 100
     ? { label: "Fully Verified", color: "#22c55e", bg: "rgba(34,197,94,0.08)" }
     : critPct >= 80
-    ? { label: "Nearly Complete", color: "#3b82f6", bg: "rgba(59,130,246,0.08)" }
+    ? { label: "Nearly Complete", color: "#1A6FA5", bg: "rgba(26,111,165,0.08)" }
     : critPct >= 40
     ? { label: "In Progress",     color: "#f59e0b", bg: "rgba(245,158,11,0.08)" }
     : { label: "Incomplete",      color: "#ef4444", bg: "rgba(239,68,68,0.08)" };
@@ -82,7 +82,7 @@ export default function DueDiligencePage() {
       {/* Progress row */}
       <motion.div {...fadeUp(0.14)} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: "Overall Progress",  pct, sub: `${checked}/${total} items`,          color: "#3b82f6" },
+          { label: "Overall Progress",  pct, sub: `${checked}/${total} items`,          color: "#1A6FA5" },
           { label: "Critical Items",    pct: critPct, sub: `${critC}/${critT} critical`, color: "#f97316" },
           { label: "Buyer Checks",      pct: Math.round((buyer.filter(i=>i.checked).length/buyer.length)*100),   sub: `${buyer.filter(i=>i.checked).length}/${buyer.length}`,   color: "#22c55e" },
           { label: "Seller Checks",     pct: Math.round((seller.filter(i=>i.checked).length/seller.length)*100), sub: `${seller.filter(i=>i.checked).length}/${seller.length}`, color: "#a78bfa" },
@@ -109,7 +109,7 @@ export default function DueDiligencePage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <CheckGroup title="Buyer Verification"  icon={<Users size={14} className="text-emerald-500" />}  color="#22c55e" items={buyer}  onToggle={toggle} delay={0.2} />
         <CheckGroup title="Seller Verification" icon={<Store size={14} className="text-purple-400" />}   color="#a78bfa" items={seller} onToggle={toggle} delay={0.27} />
-        <CheckGroup title="Broker Verification" icon={<UserCheck size={14} className="text-blue-400" />} color="#3b82f6" items={broker} onToggle={toggle} delay={0.34} />
+        <CheckGroup title="Broker Verification" icon={<UserCheck size={14} className="text-blue-400" />} color="#1A6FA5" items={broker} onToggle={toggle} delay={0.34} />
       </div>
 
       {/* Summary */}
@@ -120,7 +120,7 @@ export default function DueDiligencePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
           {[
-            { label: "Items Verified",      val: `${checked} / ${total}`, sub: "Total checklist completion",       color: "#3b82f6" },
+            { label: "Items Verified",      val: `${checked} / ${total}`, sub: "Total checklist completion",       color: "#1A6FA5" },
             { label: "Critical Compliance", val: `${critPct}%`,          sub: "All critical items must be 100%",  color: critPct === 100 ? "#22c55e" : "#f97316" },
             { label: "Pending Items",       val: `${total - checked}`,   sub: "Items requiring attention",        color: total - checked === 0 ? "#22c55e" : "#f59e0b" },
           ].map((s) => (

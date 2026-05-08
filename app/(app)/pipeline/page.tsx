@@ -9,7 +9,7 @@ import { RiskBadge, ScoreBar } from "@/components/ui/RiskBadge";
 
 const COLS: { status: DealStatus; color: string }[] = [
   { status: "New Lead",     color: "#64748b" },
-  { status: "Under Review", color: "#3b82f6" },
+  { status: "Under Review", color: "#1A6FA5" },
   { status: "Qualified",    color: "#22c55e" },
   { status: "Negotiation",  color: "#a78bfa" },
   { status: "High Risk",    color: "#f97316" },

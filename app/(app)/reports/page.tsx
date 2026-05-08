@@ -135,9 +135,9 @@ export default function ReportsPage() {
   const toggle = (key: string) => setExpanded((p) => ({ ...p, [key]: !p[key] }));
 
   const stats = [
-    { label: "Total Reports",  value: mockReports.length,                                              color: "#3b82f6" },
+    { label: "Total Reports",  value: mockReports.length,                                              color: "#1A6FA5" },
     { label: "Strong",         value: mockReports.filter((r) => r.riskLevel === "strong").length,      color: "#22c55e" },
-    { label: "Qualified",      value: mockReports.filter((r) => r.riskLevel === "qualified").length,   color: "#3b82f6" },
+    { label: "Qualified",      value: mockReports.filter((r) => r.riskLevel === "qualified").length,   color: "#1A6FA5" },
     { label: "High Risk",      value: mockReports.filter((r) => r.riskLevel === "high" || r.riskLevel === "critical").length, color: "#ef4444" },
   ];
 
@@ -213,7 +213,7 @@ export default function ReportsPage() {
                 <div className="flex items-start justify-between mb-5">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: "linear-gradient(135deg,#2563eb,#4f46e5)" }}>
+                      style={{ background: "linear-gradient(135deg,#1D4E6B,#1A6FA5)" }}>
                       <Shield size={17} className="text-white" />
                     </div>
                     <div>
@@ -228,7 +228,7 @@ export default function ReportsPage() {
                       className="flex items-center gap-1.5 text-[11.5px] px-3 py-1.5 rounded-lg font-medium transition-all"
                       style={{
                         background: copied ? "rgba(34,197,94,0.1)"  : "rgba(59,130,246,0.1)",
-                        color:      copied ? "#4ade80" : "#60a5fa",
+                        color:      copied ? "#4ade80" : "#5ba8d4",
                         border:     `1px solid ${copied ? "rgba(34,197,94,0.22)" : "rgba(59,130,246,0.22)"}`,
                       }}>
                       {copied ? <Check size={11}/> : <Copy size={11}/>}
@@ -349,7 +349,7 @@ export default function ReportsPage() {
             )}
 
             <CollapsibleSection title="Recommended Action" icon={<Target size={12} className="text-blue-400"/>}
-              color="#3b82f6" expanded={expanded.action} onToggle={() => toggle("action")}>
+              color="#1A6FA5" expanded={expanded.action} onToggle={() => toggle("action")}>
               <p className="text-[13px] text-slate-400 leading-relaxed">{selected.recommendedAction}</p>
             </CollapsibleSection>
 

@@ -422,7 +422,7 @@ export const dashboardStats = {
 // --- Risk Distribution Chart Data ---
 export const riskDistributionData = [
   { name: "Strong", value: 2, color: "#10b981" },
-  { name: "Qualified", value: 2, color: "#3b82f6" },
+  { name: "Qualified", value: 2, color: "#1A6FA5" },
   { name: "Medium", value: 2, color: "#f59e0b" },
   { name: "High Risk", value: 2, color: "#f97316" },
   { name: "Critical", value: 1, color: "#ef4444" },

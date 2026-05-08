@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1C2C"/>
+      <stop offset="100%" stop-color="#0d2035"/>
+    </linearGradient>
+    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4E6B"/>
+      <stop offset="100%" stop-color="#1A6FA5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#1A6FA5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1A6FA5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Subtle glow -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Subtle grid lines for fintech feel -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="#1D4E6B" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="#1D4E6B" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#1D4E6B" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#1D4E6B" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="4" height="630" fill="#1A6FA5" opacity="0.6"/>
+
+  <!-- Shield icon (large, centered) -->
+  <g transform="translate(550, 175) scale(3.2)">
+    <path d="M16 2L28 7.5V18C28 23.8 22.8 28 16 30.5C9.2 28 4 23.8 4 18V7.5L16 2Z" fill="url(#sh)"/>
+    <rect x="10" y="14.5" width="12" height="1.6" rx="0.8" fill="white" fill-opacity="0.9"/>
+    <rect x="12" y="19" width="8" height="1.1" rx="0.55" fill="white" fill-opacity="0.45"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="600" y="360" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-1.5" fill="#F4F6F8" text-anchor="middle">BrokerShield<tspan fill="#1A6FA5" font-size="40" font-weight="600"> AI</tspan></text>
+
+  <!-- Tagline -->
+  <text x="600" y="408" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="18" font-weight="400" letter-spacing="0.08em" fill="#5C6B7A" text-anchor="middle">AI-POWERED OTC COUNTERPARTY RISK &amp; DEAL QUALIFICATION PLATFORM</text>
+
+  <!-- Divider -->
+  <rect x="480" y="432" width="240" height="1" fill="#1D4E6B" opacity="0.5"/>
+
+  <!-- Status -->
+  <text x="600" y="460" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="0.18em" fill="#1A6FA5" text-anchor="middle">PRIVATE BETA MVP</text>
+
+  <!-- Domain -->
+  <text x="600" y="580" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="14" font-weight="400" letter-spacing="0.06em" fill="#2d3f52" text-anchor="middle">Operated by Prospectalia B2B · Info@prospectaliab2b.com</text>
+</svg>

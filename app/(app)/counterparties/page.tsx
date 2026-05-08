@@ -13,7 +13,7 @@ import { getInitials } from "@/lib/utils";
 
 const TYPE_FILTERS: (CounterpartyType | "All")[] = ["All","Buyer","Seller","Broker","Mandate"];
 const TYPE_COLORS: Record<CounterpartyType, string> = {
-  Buyer: "#3b82f6", Seller: "#22c55e", Broker: "#a78bfa", Mandate: "#fbbf24",
+  Buyer: "#1A6FA5", Seller: "#22c55e", Broker: "#a78bfa", Mandate: "#fbbf24",
 };
 
 const fadeUp = (d = 0) => ({
@@ -49,7 +49,7 @@ export default function CounterpartiesPage() {
   };
 
   const stats = [
-    { label: "Total",     value: mockCounterparties.length,                                    color: "#3b82f6" },
+    { label: "Total",     value: mockCounterparties.length,                                    color: "#1A6FA5" },
     { label: "Buyers",    value: mockCounterparties.filter((c) => c.type === "Buyer").length,  color: "#22c55e" },
     { label: "Sellers",   value: mockCounterparties.filter((c) => c.type === "Seller").length, color: "#a78bfa" },
     { label: "High Risk", value: mockCounterparties.filter((c) => c.riskLevel === "high" || c.riskLevel === "critical").length, color: "#f97316" },
@@ -103,7 +103,7 @@ export default function CounterpartiesPage() {
         <div className="flex items-center gap-1.5">
           {TYPE_FILTERS.map((t) => {
             const active = typeFilter === t;
-            const color  = t !== "All" ? TYPE_COLORS[t as CounterpartyType] : "#3b82f6";
+            const color  = t !== "All" ? TYPE_COLORS[t as CounterpartyType] : "#1A6FA5";
             return (
               <button key={t} onClick={() => setTypeFilter(t)}
                 className="text-[11.5px] font-medium px-3 py-1.5 rounded-lg transition-all"
@@ -171,7 +171,7 @@ export default function CounterpartiesPage() {
                     <div className="w-16 h-1.5 rounded-full bg-slate-800">
                       <div className="h-full rounded-full" style={{
                         width: `${cp.trustScore}%`,
-                        background: cp.trustScore >= 70 ? "#22c55e" : cp.trustScore >= 50 ? "#3b82f6" : cp.trustScore >= 30 ? "#f59e0b" : "#ef4444",
+                        background: cp.trustScore >= 70 ? "#22c55e" : cp.trustScore >= 50 ? "#1A6FA5" : cp.trustScore >= 30 ? "#f59e0b" : "#ef4444",
                       }} />
                     </div>
                     <span className="font-mono text-[12px] font-semibold text-slate-300 tabular-nums">{cp.trustScore}</span>

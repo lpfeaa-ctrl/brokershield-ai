@@ -40,10 +40,10 @@ const ChartTooltip = ({ active, payload, label }: TP) => {
 
 /* ── Stat cards config ─────────────────────────────────── */
 const STATS = [
-  { label: "Active Deals",            value: "9",       change: "+2 this week",       up: true,  icon: Activity,      color: "#3b82f6" },
+  { label: "Active Deals",            value: "9",       change: "+2 this week",       up: true,  icon: Activity,      color: "#1A6FA5" },
   { label: "High Risk Deals",         value: "3",       change: "+1 flagged",         up: false, icon: AlertTriangle, color: "#f97316" },
   { label: "Qualified Counterparties",value: "6",       change: "+1 verified",        up: true,  icon: Users,         color: "#22c55e" },
-  { label: "Est. Deal Volume",        value: "$58.7M",  change: "+12% vs last month", up: true,  icon: DollarSign,    color: "#a78bfa" },
+  { label: "Est. Deal Volume",        value: "$58.7M",  change: "+12% vs last month", up: true,  icon: DollarSign,    color: "#7ba8c4" },
   { label: "Avg. Risk Score",         value: "57",      change: "Moderate",           up: null,  icon: TrendingUp,    color: "#f59e0b" },
 ];
 
@@ -158,8 +158,8 @@ export default function DashboardPage() {
             <AreaChart data={dealTrendData} margin={{ top: 4, right: 4, bottom: 0, left: -10 }}>
               <defs>
                 <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="#3b82f6" stopOpacity={0.25} />
-                  <stop offset="100%" stopColor="#3b82f6" stopOpacity={0}    />
+                  <stop offset="0%"   stopColor="#1A6FA5" stopOpacity={0.22} />
+                  <stop offset="100%" stopColor="#1A6FA5" stopOpacity={0}    />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="2 4" stroke="rgba(148,163,184,0.06)" />
@@ -168,10 +168,10 @@ export default function DashboardPage() {
               <Tooltip content={<ChartTooltip />} />
               <Area
                 type="monotone" dataKey="value" name="value"
-                stroke="#3b82f6" strokeWidth={2}
+                stroke="#1A6FA5" strokeWidth={2}
                 fill="url(#areaGrad)"
                 dot={false}
-                activeDot={{ r: 4, fill: "#60a5fa", strokeWidth: 0 }}
+                activeDot={{ r: 4, fill: "#5ba8d4", strokeWidth: 0 }}
               />
             </AreaChart>
           </ResponsiveContainer>
@@ -195,8 +195,8 @@ export default function DashboardPage() {
               <Tooltip
                 formatter={(v) => [`${v} deals`, ""]}
                 contentStyle={{
-                  background: "rgba(6,16,40,0.95)", border: "1px solid rgba(59,130,246,0.18)",
-                  borderRadius: 10, fontSize: 11.5, color: "#e2e8f0",
+                  background: "rgba(10,26,40,0.97)", border: "1px solid rgba(26,111,165,0.18)",
+                  borderRadius: 10, fontSize: 11.5, color: "#c8d8e4",
                 }}
               />
             </PieChart>
@@ -231,7 +231,7 @@ export default function DashboardPage() {
             <Tooltip content={<ChartTooltip />} />
             <Bar dataKey="value" name="value" radius={[4, 4, 0, 0]}>
               {pipelineValueData.map((_, i) => {
-                const cols = ["#3b82f6","#60a5fa","#22c55e","#a78bfa","#f97316","#22c55e"];
+                const cols = ["#1A6FA5","#5ba8d4","#22c55e","#7ba8c4","#f97316","#22c55e"];
                 return <Cell key={i} fill={cols[i % cols.length]} fillOpacity={0.8} />;
               })}
             </Bar>

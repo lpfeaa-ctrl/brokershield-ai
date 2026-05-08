@@ -2,11 +2,11 @@ import { RiskLevel } from "@/lib/types";
 
 /* ── Color maps ──────────────────────────────────────────── */
 const COLORS: Record<RiskLevel, { text: string; bg: string; border: string; dot: string }> = {
-  strong:    { text: "#22c55e", bg: "rgba(34,197,94,0.1)",    border: "rgba(34,197,94,0.22)",    dot: "#22c55e" },
-  qualified: { text: "#60a5fa", bg: "rgba(59,130,246,0.1)",   border: "rgba(59,130,246,0.22)",   dot: "#3b82f6" },
-  medium:    { text: "#fbbf24", bg: "rgba(245,158,11,0.1)",   border: "rgba(245,158,11,0.22)",   dot: "#f59e0b" },
-  high:      { text: "#fb923c", bg: "rgba(249,115,22,0.1)",   border: "rgba(249,115,22,0.22)",   dot: "#f97316" },
-  critical:  { text: "#f87171", bg: "rgba(239,68,68,0.1)",    border: "rgba(239,68,68,0.22)",    dot: "#ef4444" },
+  strong:    { text: "#22c55e", bg: "rgba(34,197,94,0.09)",    border: "rgba(34,197,94,0.2)",    dot: "#22c55e" },
+  qualified: { text: "#5ba8d4", bg: "rgba(26,111,165,0.1)",    border: "rgba(26,111,165,0.22)",  dot: "#1A6FA5" },
+  medium:    { text: "#d4a017", bg: "rgba(245,158,11,0.09)",   border: "rgba(245,158,11,0.2)",   dot: "#f59e0b" },
+  high:      { text: "#fb923c", bg: "rgba(249,115,22,0.09)",   border: "rgba(249,115,22,0.2)",   dot: "#f97316" },
+  critical:  { text: "#f87171", bg: "rgba(239,68,68,0.09)",    border: "rgba(239,68,68,0.2)",    dot: "#ef4444" },
 };
 
 const LABELS: Record<RiskLevel, string> = {
@@ -163,13 +163,13 @@ export function ScoreBar({ score, level, width = 80 }: ScoreBarProps) {
 
 /* ── StatusBadge (deal pipeline status) ─────────────────── */
 const STATUS_MAP: Record<string, { bg: string; color: string }> = {
-  "New Lead":      { bg: "rgba(100,116,139,0.1)", color: "#94a3b8" },
-  "Under Review":  { bg: "rgba(59,130,246,0.1)",  color: "#60a5fa" },
-  "Qualified":     { bg: "rgba(34,197,94,0.1)",   color: "#4ade80" },
-  "Negotiation":   { bg: "rgba(139,92,246,0.1)",  color: "#c084fc" },
-  "High Risk":     { bg: "rgba(249,115,22,0.1)",  color: "#fb923c" },
-  "Closed Won":    { bg: "rgba(34,197,94,0.12)",  color: "#22c55e" },
-  "Rejected":      { bg: "rgba(239,68,68,0.1)",   color: "#f87171" },
+  "New Lead":      { bg: "rgba(92,107,122,0.1)",   color: "#5C6B7A" },
+  "Under Review":  { bg: "rgba(26,111,165,0.09)",  color: "#5ba8d4" },
+  "Qualified":     { bg: "rgba(34,197,94,0.09)",   color: "#4ade80" },
+  "Negotiation":   { bg: "rgba(26,111,165,0.08)",  color: "#7ba8c4" },
+  "High Risk":     { bg: "rgba(249,115,22,0.09)",  color: "#fb923c" },
+  "Closed Won":    { bg: "rgba(34,197,94,0.1)",    color: "#22c55e" },
+  "Rejected":      { bg: "rgba(239,68,68,0.09)",   color: "#f87171" },
 };
 
 export function StatusBadge({ status }: { status: string }) {
@@ -186,10 +186,10 @@ export function StatusBadge({ status }: { status: string }) {
 
 /* ── Type badge (counterparty type) ─────────────────────── */
 const TYPE_COLORS: Record<string, string> = {
-  Buyer:   "#3b82f6",
+  Buyer:   "#1A6FA5",
   Seller:  "#22c55e",
-  Broker:  "#a78bfa",
-  Mandate: "#fbbf24",
+  Broker:  "#7ba8c4",
+  Mandate: "#d4a017",
 };
 export function TypeBadge({ type }: { type: string }) {
   const color = TYPE_COLORS[type] ?? "#94a3b8";

@@ -314,7 +314,7 @@ export default function AIAssistantPage() {
                       className="flex items-center gap-1.5 text-[11.5px] px-3 py-1.5 rounded-lg font-medium transition-all"
                       style={{
                         background: copied ? "rgba(34,197,94,0.1)"  : "rgba(59,130,246,0.1)",
-                        color:      copied ? "#4ade80" : "#60a5fa",
+                        color:      copied ? "#4ade80" : "#5ba8d4",
                         border:     `1px solid ${copied ? "rgba(34,197,94,0.22)" : "rgba(59,130,246,0.22)"}`,
                       }}>
                       {copied ? <Check size={11}/> : <Copy size={11}/>}
@@ -366,7 +366,7 @@ export default function AIAssistantPage() {
               disabled={!chatInput.trim() || generating}
               whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.94 }}
               className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 disabled:opacity-40 transition-all"
-              style={{ background: "linear-gradient(135deg,#2563eb,#4f46e5)" }}>
+              style={{ background: "linear-gradient(135deg,#1D4E6B,#1A6FA5)" }}>
               <Send size={13} className="text-white" />
             </motion.button>
           </div>

@@ -4,27 +4,34 @@
 
 /* ── Design Tokens ─────────────────────────────────────── */
 :root {
-  --bg:          #020b18;
-  --surface:     #040f20;
-  --card:        rgba(8, 20, 42, 0.65);
-  --card-border: rgba(148, 163, 184, 0.07);
-  --card-hover:  rgba(59, 130, 246, 0.2);
-  --input-bg:    rgba(4, 10, 25, 0.75);
-  --input-bd:    rgba(148, 163, 184, 0.1);
+  /* BrokerShield brand palette */
+  --brand-primary:   #0B1C2C;
+  --brand-secondary: #1D4E6B;
+  --brand-accent:    #1A6FA5;
+  --brand-neutral:   #5C6B7A;
 
-  --text-primary:   #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-muted:     #475569;
-  --text-subtle:    #2d3f58;
+  --bg:          #0a1a28;
+  --surface:     #0d2035;
+  --card:        rgba(11, 28, 44, 0.68);
+  --card-border: rgba(92, 107, 122, 0.1);
+  --card-hover:  rgba(26, 111, 165, 0.18);
+  --input-bg:    rgba(10, 22, 38, 0.8);
+  --input-bd:    rgba(92, 107, 122, 0.14);
 
-  --blue:       #3b82f6;
-  --blue-dim:   #2563eb;
-  --indigo:     #6366f1;
-  --blue-glow:  rgba(59, 130, 246, 0.18);
-  --blue-glow2: rgba(59, 130, 246, 0.06);
+  --text-primary:   #e8edf2;
+  --text-secondary: #8fa3b4;
+  --text-muted:     #4a5e6e;
+  --text-subtle:    #2b3d4f;
+
+  /* Brand accents (replaces generic blue/indigo) */
+  --blue:       #1A6FA5;
+  --blue-dim:   #1D4E6B;
+  --indigo:     #1A6FA5;
+  --blue-glow:  rgba(26, 111, 165, 0.16);
+  --blue-glow2: rgba(26, 111, 165, 0.06);
 
   --risk-strong:    #22c55e;
-  --risk-qualified: #3b82f6;
+  --risk-qualified: #1A6FA5;
   --risk-medium:    #f59e0b;
   --risk-high:      #f97316;
   --risk-critical:  #ef4444;
@@ -39,7 +46,7 @@ body {
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -53,8 +60,8 @@ body {
 /* ── Scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: #030c1d; }
-::-webkit-scrollbar-thumb { background: #1a2f50; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+::-webkit-scrollbar-thumb { background: #1a3050; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #1A6FA5; }
 
 /* ── Glass Card ────────────────────────────────────────── */
 .glass-card {
@@ -66,8 +73,8 @@ body {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.18);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(59, 130, 246, 0.07);
+  border-color: rgba(26, 111, 165, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(26, 111, 165, 0.08);
 }
 .glass-card-flat {
   background: rgba(6, 16, 36, 0.8);
@@ -89,7 +96,7 @@ body {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .metric-card:hover {
-  border-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(26, 111, 165, 0.2);
   transform: translateY(-1px);
 }
 .metric-card::after {
@@ -122,9 +129,9 @@ body {
   background: rgba(148, 163, 184, 0.04);
 }
 .sidebar-nav-item.active {
-  color: #bfdbfe;
-  background: rgba(59, 130, 246, 0.08);
-  border-left-color: #3b82f6;
+  color: #a8c8e0;
+  background: rgba(26, 111, 165, 0.1);
+  border-left-color: #1A6FA5;
 }
 .sidebar-nav-item.active::after {
   content: '';
@@ -132,9 +139,9 @@ body {
   right: -1px; top: 50%;
   transform: translateY(-50%);
   width: 3px; height: 16px;
-  background: #3b82f6;
+  background: #1A6FA5;
   border-radius: 2px 0 0 2px;
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
 /* ── Input Field ───────────────────────────────────────── */
@@ -152,9 +159,9 @@ body {
   font-family: inherit;
 }
 .input-field:focus {
-  border-color: rgba(59, 130, 246, 0.45);
-  background: rgba(4, 10, 28, 0.9);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.07), 0 1px 4px rgba(0,0,0,0.3);
+  border-color: rgba(26, 111, 165, 0.45);
+  background: rgba(10, 22, 38, 0.95);
+  box-shadow: 0 0 0 3px rgba(26, 111, 165, 0.07), 0 1px 4px rgba(0,0,0,0.3);
 }
 .input-field::placeholder { color: var(--text-subtle); }
 .input-field::-webkit-scrollbar { width: 3px; }
@@ -165,7 +172,7 @@ select.input-field option { background: #071526; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  background: linear-gradient(135deg, #1D4E6B, #1A6FA5);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -177,7 +184,7 @@ select.input-field option { background: #071526; }
   white-space: nowrap;
 }
 .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.45), 0 4px 14px rgba(0,0,0,0.3);
+  box-shadow: 0 0 22px rgba(26, 111, 165, 0.4), 0 4px 14px rgba(0,0,0,0.3);
   transform: translateY(-1px);
 }
 .btn-primary:active { transform: translateY(0); }
@@ -224,7 +231,7 @@ select.input-field option { background: #071526; }
 }
 .data-table tbody tr { transition: background 0.12s ease; }
 .data-table tbody tr:hover td {
-  background: rgba(59, 130, 246, 0.03);
+  background: rgba(26, 111, 165, 0.04);
   color: var(--text-primary);
 }
 .data-table tbody tr:last-child td { border-bottom: none; }
@@ -255,7 +262,7 @@ select.input-field option { background: #071526; }
   transition: all 0.18s ease;
 }
 .kanban-card:hover {
-  border-color: rgba(59, 130, 246, 0.25);
+  border-color: rgba(26, 111, 165, 0.22);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
@@ -271,13 +278,13 @@ select.input-field option { background: #071526; }
 
 /* ── Gradient text ─────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #c084fc 100%);
+  background: linear-gradient(135deg, #5ba8d4 0%, #1A6FA5 55%, #1D4E6B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .gradient-text-blue {
-  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  background: linear-gradient(90deg, #5ba8d4, #a8c8e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -300,9 +307,9 @@ select.input-field option { background: #071526; }
 
 /* ── Chart tooltip ─────────────────────────────────────── */
 .chart-tooltip {
-  background: rgba(6, 16, 40, 0.95);
+  background: rgba(10, 26, 40, 0.97);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(26, 111, 165, 0.2);
   border-radius: 10px;
   padding: 10px 14px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
@@ -379,6 +386,39 @@ select.input-field option { background: #071526; }
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
   .glass-card  { border-radius: 12px; }
+  .metric-card { padding: 16px 18px 14px; }
+  .data-table th, .data-table td { padding: 10px 14px; }
+  .page-title  { font-size: 18px; }
+}
+
+/* ── Mobile sidebar overlay ────────────────────────────── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 30;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.18s ease;
+}
+.sidebar-mobile-open {
+  transform: translateX(0) !important;
+}
+
+/* ── Mobile top bar ────────────────────────────────────── */
+.mobile-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(10, 26, 40, 0.98);
+  border-bottom: 1px solid rgba(92, 107, 122, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  backdrop-filter: blur(12px);
+}
+@media (max-width: 1023px) {
+  .mobile-topbar { display: flex; }
 }
 
 @layer utilities {
