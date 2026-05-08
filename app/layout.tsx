@@ -9,10 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BrokerShield AI — Intelligence Platform for International Trade",
+  title: "BrokerShield AI — AI-powered OTC Counterparty Risk & Deal Qualification Platform",
   description:
-    "Professional AI-powered platform for international brokers, mandates, traders and commercial intermediaries. Qualify deals, detect fraud, assess risk.",
-  keywords: "trade finance, broker, due diligence, risk assessment, commodities",
+    "BrokerShield AI helps brokers, intermediaries and institutional OTC participants identify risk indicators, qualify counterparties and review transaction structure before engaging. Private Beta MVP.",
+  keywords: "OTC broker, counterparty risk, deal qualification, trade finance, intermediary, mandate, risk assessment, due diligence",
 };
 
 export default function RootLayout({

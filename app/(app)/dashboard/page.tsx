@@ -51,11 +51,28 @@ export default function DashboardPage() {
   return (
     <div className="p-8 space-y-7 min-h-screen" style={{ background: "var(--bg)" }}>
 
+      {/* Private beta notice */}
+      <motion.div
+        {...fadeUp(0)}
+        className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg"
+        style={{ background: "rgba(245,158,11,0.05)", border: "1px solid rgba(245,158,11,0.14)" }}
+      >
+        <span
+          className="text-[9.5px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full shrink-0"
+          style={{ background: "rgba(245,158,11,0.1)", color: "#fbbf24", border: "1px solid rgba(245,158,11,0.2)" }}
+        >
+          Private Beta MVP
+        </span>
+        <span className="text-[11.5px] text-slate-600">
+          Early access prototype. Results are indicative and intended for structured review, not final decision-making.
+        </span>
+      </motion.div>
+
       {/* Page header */}
-      <motion.div {...fadeUp(0)} className="flex items-start justify-between">
+      <motion.div {...fadeUp(0.05)} className="flex items-start justify-between">
         <div>
-          <h1 className="page-title">Intelligence Dashboard</h1>
-          <p className="page-subtitle">Real-time overview of your trade operations and risk exposure</p>
+          <h1 className="page-title">Operations Dashboard</h1>
+          <p className="page-subtitle">Overview of deal pipeline, risk exposure and counterparty signals</p>
         </div>
         <div className="flex items-center gap-2.5">
           <button className="btn-ghost">
@@ -66,7 +83,7 @@ export default function DashboardPage() {
             className="text-[11.5px] px-3 py-2 rounded-lg"
             style={{ background: "rgba(8,20,42,0.6)", border: "1px solid rgba(148,163,184,0.07)", color: "#475569" }}
           >
-            Updated <span className="text-slate-400">just now</span>
+            Demo data <span className="text-slate-400">· mock</span>
           </div>
         </div>
       </motion.div>

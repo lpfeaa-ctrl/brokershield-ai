@@ -53,7 +53,7 @@ const mockReports: MockReport[] = [
     missingInfo: ["KYC from both buyer and seller", "POF from buyer", "Clear OTC procedure documentation", "Company registration for Alpine Digital SA"],
     strengths: ["Deal size could justify resources if legitimate"],
     recommendedAction: "DO NOT PROCEED. Immediately request full KYC compliance before any further engagement. If refused, reject and document this interaction.",
-    conclusion: "This transaction presents multiple critical risk indicators consistent with fraudulent activity or money laundering attempts. The refusal of KYC, generic email, lack of POF, and MT103 payment terms are each individually disqualifying. Immediate rejection is recommended.",
+    conclusion: "This transaction presents multiple critical risk indicators that individually and collectively justify immediate disengagement. The refusal of KYC, generic email, absence of POF, and MT103 payment terms are each serious operational red flags. Rejection and documentation of this interaction is recommended.",
   },
   {
     id: "RPT-003", operationId: "OP-003", product: "Sugar ICUMSA 45",
@@ -109,7 +109,7 @@ const mockReports: MockReport[] = [
     missingInfo: ["Valid and uncontested export license from Ghana", "Third-party certification (BV/SGS) for gold purity and weight", "Full KYC from Ankara Precious Metals", "Bank guarantee or LC from Turkish bank"],
     strengths: ["Deal size is commercially attractive if legitimate"],
     recommendedAction: "Do not commit any resources or capital. Require full documentation overhaul: switch to CIF terms, replace MT103 with LC or BG from a Turkish bank, and obtain contested export documents.",
-    conclusion: "This gold transaction presents a high-risk profile with multiple characteristics associated with fraudulent or manipulated commodity deals. BrokerShield AI strongly recommends suspension of engagement pending complete documentation resolution and legal consultation.",
+    conclusion: "This gold transaction presents a high-risk profile with multiple procedural and documentation red flags. Platform assessment indicates suspension of engagement pending complete documentation resolution. Legal and compliance consultation is recommended before any further steps.",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function ReportsPage() {
             <FileBarChart size={20} className="text-blue-500" strokeWidth={2} />
             Risk Reports
           </h1>
-          <p className="page-subtitle">Confidential AI-generated risk assessments for your trade operations</p>
+          <p className="page-subtitle">Indicative risk assessments for structured deal review — for operational reference only</p>
         </div>
       </motion.div>
 

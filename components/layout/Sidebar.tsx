@@ -59,7 +59,7 @@ export default function Sidebar() {
               <span className="text-blue-400 text-[12px] font-semibold ml-0.5">AI</span>
             </div>
             <div className="text-[9.5px] font-semibold tracking-[0.15em] uppercase text-slate-600 mt-0.5">
-              Trade Intelligence
+              OTC Risk &amp; Deal Review
             </div>
           </div>
         </Link>
@@ -75,7 +75,7 @@ export default function Sidebar() {
           }}
         >
           <span className="status-dot-live shrink-0" />
-          <span className="text-[11px] font-semibold text-emerald-400">Intelligence Active</span>
+          <span className="text-[11px] font-semibold text-emerald-400">Private Beta Active</span>
         </div>
       </div>
 

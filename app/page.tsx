@@ -10,27 +10,43 @@ import {
   FileText,
   Bot,
   ChevronRight,
-  Lock,
   BarChart2,
-  CheckCircle2,
   Globe,
   Zap,
+  Building2,
+  Briefcase,
+  DollarSign,
+  Network,
+  Calendar,
 } from "lucide-react";
 
 const features = [
-  { icon: TrendingUp,    title: "Deal Analysis",      desc: "AI-powered risk scoring in seconds",                color: "#3b82f6" },
-  { icon: AlertTriangle, title: "Fraud Detection",     desc: "Identify red flags and scam patterns",             color: "#f59e0b" },
-  { icon: Users,         title: "Counterparty Risk",   desc: "Trust profiles for every party",                   color: "#22c55e" },
-  { icon: FileText,      title: "Due Diligence",       desc: "Structured verification checklists",               color: "#a78bfa" },
-  { icon: Bot,           title: "AI Assistant",        desc: "Generate professional communications",             color: "#06b6d4" },
-  { icon: BarChart2,     title: "Pipeline CRM",        desc: "Kanban deal tracking from lead to close",          color: "#f97316" },
+  { icon: TrendingUp,    title: "Deal Risk Analysis",    desc: "Structured risk scoring across 16 deal parameters",                      color: "#3b82f6" },
+  { icon: AlertTriangle, title: "Red Flag Detection",    desc: "Identify potential risk indicators and procedural gaps",                  color: "#f59e0b" },
+  { icon: Users,         title: "Counterparty Review",   desc: "Preliminary qualification signals for each party in the transaction",    color: "#22c55e" },
+  { icon: FileText,      title: "Due Diligence",         desc: "Structured verification checklists for buyer, seller and broker",        color: "#a78bfa" },
+  { icon: Bot,           title: "AI Assistant",          desc: "Draft professional communications and deal review summaries",            color: "#06b6d4" },
+  { icon: BarChart2,     title: "Deal Pipeline",         desc: "Track and manage OTC operations from qualification to close",            color: "#f97316" },
 ];
 
-const stats = [
-  { value: "2,400+", label: "Deals Analyzed" },
-  { value: "6h",     label: "Saved Per Deal" },
-  { value: "94%",    label: "Fraud Detected" },
-  { value: "340+",   label: "Active Brokers" },
+const targetUsers = [
+  { icon: Briefcase,  label: "OTC Brokers" },
+  { icon: Network,    label: "Intermediaries & Mandates" },
+  { icon: Building2,  label: "Digital Asset Desks" },
+  { icon: DollarSign, label: "Family Offices" },
+  { icon: Users,      label: "Institutional Participants" },
+  { icon: Globe,      label: "Transaction Coordinators" },
+];
+
+const problems = [
+  "Fake mandates and unverifiable counterparties",
+  "Non-executable transactions with missing procedure details",
+  "Broker chains with unclear buyer or seller position",
+  "Unrealistic conditions or below-market pricing claims",
+  "Poor or inconsistent documentation",
+  "Weak counterparties who refuse KYC or compliance steps",
+  "High urgency pressure tactics from unknown parties",
+  "Unclear commission structures across multiple layers",
 ];
 
 const container: Variants = {
@@ -77,25 +93,40 @@ export default function LandingPage() {
           >
             <Shield size={15} className="text-white" strokeWidth={2.5} />
           </div>
-          <span className="font-bold text-[15px] text-white tracking-tight">
-            BrokerShield<span className="text-blue-400 font-semibold text-[13px] ml-0.5">AI</span>
-          </span>
+          <div className="leading-none">
+            <span className="font-bold text-[15px] text-white tracking-tight">
+              BrokerShield<span className="text-blue-400 font-semibold text-[13px] ml-0.5">AI</span>
+            </span>
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.45 }}
-          className="flex items-center gap-2 text-[12px] text-slate-600"
+          className="flex items-center gap-3"
         >
-          <Globe size={12} />
-          International Trade Intelligence
+          <span
+            className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+            style={{
+              background: "rgba(245,158,11,0.08)",
+              border: "1px solid rgba(245,158,11,0.25)",
+              color: "#fbbf24",
+            }}
+          >
+            Private Beta MVP
+          </span>
+          <span className="text-[12px] text-slate-600 hidden sm:flex items-center gap-1.5">
+            <Globe size={12} />
+            OTC · Trade Finance · Risk
+          </span>
         </motion.div>
       </header>
 
       {/* Hero */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-16 pb-20">
-        {/* Pill */}
+
+        {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -105,13 +136,13 @@ export default function LandingPage() {
           <span
             className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full"
             style={{
-              background: "rgba(37,99,235,0.08)",
-              border: "1px solid rgba(37,99,235,0.2)",
-              color: "#60a5fa",
+              background: "rgba(245,158,11,0.07)",
+              border: "1px solid rgba(245,158,11,0.2)",
+              color: "#fbbf24",
             }}
           >
             <Zap size={10} strokeWidth={2.5} />
-            Demo Platform · v1.0
+            Private Beta MVP · Early Access
           </span>
         </motion.div>
 
@@ -121,9 +152,9 @@ export default function LandingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.18, duration: 0.55 }}
           className="text-center font-black tracking-tight leading-[1.08] mb-5"
-          style={{ fontSize: "clamp(40px, 6vw, 68px)" }}
+          style={{ fontSize: "clamp(32px, 5vw, 58px)" }}
         >
-          <span className="text-white">Protect Every</span>
+          <span className="text-white">Analyze OTC transactions</span>
           <br />
           <span
             style={{
@@ -133,31 +164,44 @@ export default function LandingPage() {
               backgroundClip: "text",
             }}
           >
-            Trade Operation
+            before you waste time or money.
           </span>
         </motion.h1>
 
-        {/* Sub */}
+        {/* Subtext */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.26, duration: 0.5 }}
-          className="text-center text-slate-500 leading-relaxed mb-10 max-w-xl"
+          className="text-center text-slate-500 leading-relaxed mb-4 max-w-xl"
           style={{ fontSize: "15px" }}
         >
-          The intelligence platform for international brokers, mandates and
-          commercial intermediaries. Qualify deals, detect fraud, assess
-          counterparty risk — in seconds.
+          BrokerShield AI helps brokers, intermediaries and institutional OTC participants identify
+          risk indicators, qualify counterparties and review transaction structure before engaging.
         </motion.p>
 
-        {/* CTA */}
+        {/* Positioning line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.32, duration: 0.45 }}
+          className="text-center text-[12px] text-slate-700 mb-10 font-medium tracking-wide"
+        >
+          AI-powered OTC Counterparty Risk &amp; Deal Qualification Platform
+        </motion.p>
+
+        {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.34, duration: 0.45 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mb-14"
+          transition={{ delay: 0.38, duration: 0.45 }}
+          className="flex flex-col sm:flex-row items-center gap-4 mb-8"
         >
-          <Link href="/dashboard">
+          <a
+            href="https://calendly.com/lpfeaa/reunion-gratuita-prospectalia-b2b"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.button
               whileHover={{ scale: 1.025, y: -2 }}
               whileTap={{ scale: 0.975 }}
@@ -167,29 +211,101 @@ export default function LandingPage() {
                 boxShadow: "0 0 28px rgba(37,99,235,0.45), 0 4px 16px rgba(0,0,0,0.35)",
               }}
             >
-              Enter Demo Platform
+              <Calendar size={15} strokeWidth={2} />
+              Request Demo
               <ChevronRight size={16} strokeWidth={2.5} />
             </motion.button>
+          </a>
+          <Link href="/analyze">
+            <motion.button
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-[14px]"
+              style={{
+                background: "rgba(37,99,235,0.07)",
+                border: "1px solid rgba(37,99,235,0.22)",
+                color: "#93c5fd",
+              }}
+            >
+              View Risk Analysis Demo
+            </motion.button>
           </Link>
-          <span className="flex items-center gap-1.5 text-[12px] text-slate-600">
-            <Lock size={11} />
-            No login required
-          </span>
         </motion.div>
 
-        {/* Stats */}
+        {/* Early access disclaimer */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="flex items-center gap-10 mb-14"
+          transition={{ delay: 0.48 }}
+          className="mb-14 text-center"
         >
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
-              <div className="text-[22px] font-black text-white leading-none">{s.value}</div>
-              <div className="text-[11px] text-slate-600 mt-1 font-medium">{s.label}</div>
-            </div>
-          ))}
+          <span
+            className="text-[11px] px-4 py-1.5 rounded-full"
+            style={{
+              background: "rgba(148,163,184,0.04)",
+              border: "1px solid rgba(148,163,184,0.09)",
+              color: "#475569",
+            }}
+          >
+            Early access prototype. Results are indicative and intended for structured review, not final decision-making.
+          </span>
+        </motion.div>
+
+        {/* Who it&apos;s for */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.54, duration: 0.5 }}
+          className="w-full max-w-3xl mb-12"
+        >
+          <p className="text-center text-[11px] font-semibold tracking-widest uppercase text-slate-600 mb-5">
+            Built for OTC professionals
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {targetUsers.map((u) => (
+              <div
+                key={u.label}
+                className="flex items-center gap-2.5 px-4 py-3 rounded-lg"
+                style={{
+                  background: "rgba(8,20,42,0.5)",
+                  border: "1px solid rgba(148,163,184,0.07)",
+                }}
+              >
+                <u.icon size={13} className="text-blue-500 shrink-0" strokeWidth={1.8} />
+                <span className="text-[12px] text-slate-400 font-medium">{u.label}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Problem patterns */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.62, duration: 0.5 }}
+          className="w-full max-w-3xl mb-12"
+        >
+          <p className="text-center text-[11px] font-semibold tracking-widest uppercase text-slate-600 mb-2">
+            Risk patterns this platform helps review
+          </p>
+          <p className="text-center text-[11.5px] text-slate-700 mb-5">
+            For preliminary operational assessment only — not a guarantee of fraud detection or legal verification.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {problems.map((p) => (
+              <div
+                key={p}
+                className="flex items-start gap-2.5 px-4 py-3 rounded-lg"
+                style={{
+                  background: "rgba(8,20,42,0.5)",
+                  border: "1px solid rgba(148,163,184,0.07)",
+                }}
+              >
+                <AlertTriangle size={12} className="text-amber-600 shrink-0 mt-0.5" strokeWidth={1.8} />
+                <span className="text-[12px] text-slate-400 leading-snug">{p}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Feature grid */}
@@ -222,29 +338,32 @@ export default function LandingPage() {
           ))}
         </motion.div>
 
-        {/* Trust row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1 }}
-          className="flex flex-wrap justify-center gap-6 mt-12"
-        >
-          {["Compliance-Ready", "Bank-Grade Security", "ISO 27001 Ready", "GDPR Compliant"].map((b) => (
-            <span key={b} className="flex items-center gap-1.5 text-[11px] text-slate-700">
-              <CheckCircle2 size={11} className="text-emerald-700" />
-              {b}
-            </span>
-          ))}
-        </motion.div>
       </main>
 
       {/* Footer */}
       <footer
-        className="relative z-10 py-5 text-center text-[11px] text-slate-700"
+        className="relative z-10 py-7 px-6 text-center"
         style={{ borderTop: "1px solid rgba(148,163,184,0.05)" }}
       >
-        © 2024 BrokerShield AI &nbsp;·&nbsp; International Trade Intelligence &nbsp;·&nbsp;
-        <span className="text-slate-800">Demo</span>
+        <div className="text-[13px] text-slate-400 font-semibold mb-0.5">BrokerShield AI</div>
+        <div className="text-[11px] text-slate-600 mb-0.5">Private Beta MVP</div>
+        <div className="text-[11px] text-slate-700 mb-1">Operated by Prospectalia B2B</div>
+        <div className="text-[11px] text-slate-700 mb-4">
+          Contact:{" "}
+          <a
+            href="mailto:Info@prospectaliab2b.com"
+            className="text-slate-500 hover:text-slate-300 transition-colors"
+          >
+            Info@prospectaliab2b.com
+          </a>
+        </div>
+        <div
+          className="text-[10.5px] text-slate-800 max-w-2xl mx-auto leading-relaxed pt-4"
+          style={{ borderTop: "1px solid rgba(148,163,184,0.05)" }}
+        >
+          This MVP is for preliminary commercial and operational assessment only. It does not
+          constitute legal, financial, investment or compliance advice.
+        </div>
       </footer>
     </div>
   );

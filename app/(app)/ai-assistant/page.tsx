@@ -40,7 +40,7 @@ We operate strictly on a first-come, first-served basis and do not engage in "sh
 We look forward to your prompt response.
 
 With professional regards,
-[Your Name] · BrokerShield Trade Intelligence`,
+[Your Name] · BrokerShield AI`,
 
   request_pof:
 `Dear [Buyer Representative],
@@ -61,7 +61,7 @@ This is a non-negotiable requirement for all transactions above $500,000 USD.
 We await your response within 2 business days.
 
 Regards,
-[Your Name] · Compliance & Due Diligence | BrokerShield`,
+[Your Name] · BrokerShield AI — Private Beta`,
 
   request_pop:
 `Dear [Seller Representative],
@@ -100,7 +100,7 @@ Individual KYC:
 
 Refusal to provide KYC will result in immediate termination of engagement.
 
-Compliance Team · BrokerShield Trade Intelligence`,
+Compliance Team · BrokerShield AI`,
 
   polite_reject:
 `Dear [Counterparty Name],
@@ -114,7 +114,7 @@ This decision is based on our current risk parameters and internal compliance re
 We wish you every success and hope to collaborate on future opportunities that better align with our criteria.
 
 With professional regards,
-[Your Name] · BrokerShield Trade Intelligence`,
+[Your Name] · BrokerShield AI`,
 
   summarize_deal:
 `TRANSACTION EXECUTIVE SUMMARY
@@ -196,7 +196,7 @@ We accept: ICC-format NCNDA or custom agreements reviewed by our legal team.
 No client names, POF, POP or transaction details will be shared prior to execution.
 
 Regards,
-[Your Name] · Legal & Compliance | BrokerShield`,
+[Your Name] · BrokerShield AI — Private Beta`,
 };
 
 export default function AIAssistantPage() {

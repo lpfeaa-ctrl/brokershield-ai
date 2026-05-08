@@ -119,7 +119,7 @@ export default function AnalyzePage() {
             <Search size={20} className="text-blue-500" strokeWidth={2} />
             Analyze Operation
           </h1>
-          <p className="page-subtitle">Submit deal parameters for AI-powered risk assessment</p>
+          <p className="page-subtitle">Submit deal parameters for structured risk indicator analysis — results are indicative, not conclusive</p>
         </div>
         {result && (
           <motion.button
